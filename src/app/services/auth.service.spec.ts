@@ -1,18 +1,20 @@
 import { AuthService } from './auth.service';
 
-describe('AuthService', () => {
+fdescribe('AuthService', () => {
   let authService: AuthService;
 
   beforeEach(() => {
     authService = new AuthService();
+    localStorage.removeItem('user');
   });
   it('should be created', () => {
-    pending();
+    expect(authService).toBeTruthy();
   });
   it('return true when user is logged In', () => {
-    pending();
+    localStorage.setItem('user', 'aymen');
+    expect(authService.isAuthentified()).toBeTrue();
   });
   it('return false when user is logged Out', () => {
-    pending();
+    expect(authService.isAuthentified()).toBeFalse();
   });
 });
