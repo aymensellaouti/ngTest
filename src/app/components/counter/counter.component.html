@@ -1,12 +1,12 @@
-<h1>Independent counter</h1>
+<h1>Counter</h1>
 
 <p>
   <strong data-testid="count">{{ count }}</strong>
 </p>
 
 <p>
-  <button (click)="increment()">+</button>
-  <button (click)="decrement()">-</button>
+  <button (click)="increment()"  data-testId="increment-button">+</button>
+  <button (click)="decrement()"  data-testId="decrement-button">-</button>
 </p>
 
 <p>
