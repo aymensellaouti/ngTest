@@ -28,14 +28,6 @@ export class CounterComponent {
     this.notify();
   }
 
-  public reset(newCount: string): void {
-    const count = parseInt(newCount, 10);
-    if (!Number.isNaN(count)) {
-      this.count = count;
-      this.notify();
-    }
-  }
-
   private notify(): void {
     this.countChange.emit(this.count);
   }

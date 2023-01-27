@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CounterComponent } from './counter.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { findEl } from '../../helpers/tests/test.helpers';
+import { click, findEl, expectText } from '../../helpers/tests/test.helpers';
 
 fdescribe('CounterComponent', () => {
   let component: CounterComponent;
@@ -26,8 +26,14 @@ fdescribe('CounterComponent', () => {
   });
   it('increment counter by one when clic on + button', () => {
     //Act
-    countShow = findEl(fixture, 'count');
+    click(fixture, 'increment-button');
     fixture.detectChanges();
-    expect(true).toBe(true);
+    expectText(fixture, 'count', '1');
+  });
+  it('decrement counter by one when clic on - button', () => {
+    //Act
+    click(fixture, 'decrement-button');
+    fixture.detectChanges();
+    expectText(fixture, 'count', '-1');
   });
 });
