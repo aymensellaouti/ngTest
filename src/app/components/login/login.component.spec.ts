@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { AuthService } from '../../services/auth.service';
 
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let debugElement: DebugElement;
@@ -17,7 +17,9 @@ fdescribe('LoginComponent', () => {
       providers: [AuthService],
     }).compileComponents();
     authService = TestBed.inject(AuthService);
+    console.log({ authService });
     authServiceSpy = spyOn(authService, 'isAuthentified');
+    console.log({ authServiceSpy });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
